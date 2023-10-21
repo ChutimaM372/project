@@ -10,7 +10,7 @@ class NextPage extends StatelessWidget {
     'assets/images/wonbin.jpg',
     'assets/images/seunghan.jpg',
     'assets/images/sohee2.jpg',
-    'assets/images/anton.jpg',
+    'assets/images/anton2.jpg',
   ];
 
   final List<String> titles = [

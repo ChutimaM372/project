@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:project_final/screen/sub_Detailpage.dart';
 import 'package:url_launcher/url_launcher.dart';
+
 class DetailsPage extends StatelessWidget {
   final String imagePath;
   final String title;
@@ -21,10 +23,22 @@ class DetailsPage extends StatelessWidget {
       body: Column(
         children: [
           Expanded(
-            child: Center(
-              child: Image.asset(
-                imagePath,
-                fit: BoxFit.contain,
+            child: InkWell(
+              onTap: () {
+                // เด้งไปยังหน้า NextPage และส่งข้อมูลรูปภาพและหัวข้อไป
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return subpage(imagePath: imagePath, title: title);
+                    },
+                  ),
+                );
+              },
+              child: Center(
+                child: Image.asset(
+                  imagePath,
+                  fit: BoxFit.contain,
+                ),
               ),
             ),
           ),
@@ -53,7 +67,6 @@ class DetailsPage extends StatelessWidget {
                         'https://youtu.be/iUw3LPM7OBU?si=__dOu_i7ZVGCND0c');
                   },
                 ),
-
               ],
             ),
           ),
